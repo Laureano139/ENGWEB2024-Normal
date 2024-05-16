@@ -1,4 +1,6 @@
 
+# A97569 - Afonso Amorim
+
 # Persistência de Dados: 
 
 No que toca a persistência de dados utilizei o mongoDB.
@@ -87,13 +89,10 @@ os ficheiros pug necessários, passei para os mesmos a resposta obtida depois de
 
 # Uso da aplicação
 
-Na diretoria do ex1: 
-    -npm install para instalar todas as dependências
-    -executar "npm start"
+Correr o comando:
+```
+docker compose up --build -d
+```
+para colocar os containers do ex1 e do ex2 a correr.
 
-Na diretoria do ex2 
-    -npm install para instalar todas as dependências
-    -executar "npm start"
-
-Abrir "http://localhost:16001/" para testar a interface.
-Abrir o "Postman" para testar a API de dados (utilizar porta 16000).
+Depois de estarem iniciados, pode-se testar normalmente através do Postman e do localhost:16001 no browser para a interface.

@@ -5,7 +5,7 @@ var axios = require('axios')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var d = new Date().toISOString().substring(0, 16)
-  axios.get("http://localhost:16000/contratos")
+  axios.get("http://engweb2024-normal-backend-1:16000/contratos")
   .then(resp => {
       var contratos = resp.data
       res.status(200).render("index", {"lContratos" : contratos, "data" : d})
@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/:idContrato', function(req, res, next) {
   var d = new Date().toISOString().substring(0, 16)
-  axios.get("http://localhost:16000/contratos/" + req.params.idContrato)
+  axios.get("http://engweb2024-normal-backend-1:16000/contratos/" + req.params.idContrato)
   .then(resp => {
       var contrato = resp.data
       res.status(200).render("idContrato", {"contrato" : contrato, "data" : d})
@@ -29,7 +29,7 @@ router.get('/:idContrato', function(req, res, next) {
 
 router.get('/entidades/:idEntidade', function(req, res, next) {
   var d = new Date().toISOString().substring(0, 16)
-  axios.get("http://localhost:16000/contratos?entidade=" + req.params.idEntidade)
+  axios.get("http://engweb2024-normal-backend-1:16000/contratos?entidade=" + req.params.idEntidade)
   .then(resp => {
     var entidade = resp.data
     var totalPrecoContratual = entidade.reduce((total, item) => {
