@@ -1,0 +1,14 @@
+
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    depends_on:
+      - mongo-seed
+  mongo-seed:
+    image: mongo:latest
+    volumes:
+      - C:\Users\ASUS\Desktop\Universidade\EngWeb2024\ENGWEB2024-Normal\.\datasets\contratos2024.json:/datasets/contratos2024.json
+    command: mongoimport --host mongodb -d contratos -c contratos --type json --file /datasets/contratos2024.json --jsonArray
